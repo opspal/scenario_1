@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/thisa/Code/opspal/scenario_1","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
