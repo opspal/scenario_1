@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
     # Configure shell provisioner to execute commands on the virtual machine
     web01.vm.provision "shell", inline: <<-SHELL      
       # Display IP address of the virtual machine
+      sudo yum install vim -y
       ip addr show
     SHELL
   end
