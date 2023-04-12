@@ -1,7 +1,7 @@
 # scenario_1
 
 ## What you will learn:
-- Basic concept of web server
+- Basic concepts of web server
 - Preparation of linux server for a web server
 - Installing and configuring apache
 - Automating the process through vagrant

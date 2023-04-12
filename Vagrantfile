@@ -1,9 +1,5 @@
 # Vagrantfile
 
-
-
-
-
 # Use version 2 of Vagrant syntax
 Vagrant.configure("2") do |config|
 
@@ -17,15 +13,16 @@ Vagrant.configure("2") do |config|
   config.vm.define "web01" do |web01|
     
     # Set the hostname of the virtual machine
-    web01.vm.hostname = "web01"
+    web01.vm.hostname = "web01.qa.vegspoit.ag"
     
     # Add a private network interface with a static IP address
     web01.vm.network "private_network", ip: "192.168.56.10"
     
     # Configure shell provisioner to execute commands on the virtual machine
     web01.vm.provision "shell", inline: <<-SHELL      
-      # Display IP address of the virtual machine
+      # Install vim 
       sudo yum install vim -y
+      # Display IP address of the virtual machine
       ip addr show
     SHELL
   end
