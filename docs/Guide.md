@@ -114,7 +114,6 @@
     ```
 
 9. Restart httpd server
-
     ```
-    [root@web01 ~]# systemctl restart http
+    [root@web01 ~]# systemctl restart httpd
     ```
