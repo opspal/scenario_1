@@ -96,24 +96,23 @@
 
 7. Copy document root to `/var/www/html/`
     ```
-    [root@web01 scenario_1]# cp -r vegspot.ag /var/www/html/
+    [root@web01 opt]# cp -r scenario_1/vegspot.ag /var/www/html/
     ```
 
-8. Modify the apache configuration file
+8. Create the separate configuration file for `vegspot.ag`
     ```
-    vim /etc/httpd/conf/httpd.conf
+    [root@web01 opt]# vim /etc/httpd/conf.d/vegspot.ag.conf
 
-    # line 86: change to administrator email address
-    ServerAdmin root@vegspot.ag
-
-    # line 119: change   
+    # add following content
     DocumentRoot "/var/www/html/vegspot.ag"
-    
-    # line 151: change
-    AllowOverride All
+
+    <Directory "/var/www/html/vegspot.ag">
+        AllowOverride None
+        Require all granted
+    </Directory>
     ```
 
-9. Restart httpd server
+9. Reload httpd server
     ```
-    [root@web01 ~]# systemctl restart httpd
+    [root@web01 ~]# systemctl reload httpd
     ```

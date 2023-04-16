@@ -19,11 +19,12 @@ Vagrant.configure("2") do |config|
     web01.vm.network "private_network", ip: "192.168.56.10"
     
     # Configure shell provisioner to execute commands on the virtual machine
-    web01.vm.provision "shell", inline: <<-SHELL      
-      # Install vim 
-      sudo yum install vim -y
-      # Display IP address of the virtual machine
-      ip addr show
+    web01.vm.provision "shell", inline: <<-SHELL
+    
+      # Update Server pacakges
+      sudo yum update -y
+      sudo yum install -y git vim  
+      sudo systemctl start firewalld
     SHELL
   end
 end
